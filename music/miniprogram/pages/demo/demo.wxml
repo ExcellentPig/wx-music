@@ -1,0 +1,35 @@
+<view>
+	{{openid}}
+</view>
+
+<block wx:for="{{arr}}" wx:for-item="data" wx:for-index="ind" wx:key="*this">
+	<view>
+		<checkbox />{{data}}
+	</view>
+</block>
+<button bind:tap="sort">排序</button>
+
+
+<block wx:for="{{arrObj}}" wx:for-item="data" wx:for-index="ind" wx:key="id">
+	<view>
+		<checkbox />{{data.name}}
+	</view>
+</block>
+<button bind:tap="sortObj">排序</button>
+
+<button bind:tap="getMusicInfo">music</button>
+<button bind:tap="getMovieInfo">movie</button>
+
+<open-data type="userAvatarUrl"></open-data>
+<open-data type="userNickName"></open-data>
+<open-data type="userCountry"></open-data>
+<open-data type="userCity"></open-data>
+
+
+<button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">获取用户信息</button>
+
+<button bind:tap="getOpenId">获取openId</button>
+
+
+<view>{{num}}</view>
+<button bind:tap="add">ADD</button>

@@ -1,0 +1,36 @@
+<view class="ctrl">
+	<view class="ctrl-item" bind:tap="onComment">
+		<i class="iconfont icon-pinglun icon"></i>
+		<text>评论</text>
+	</view>
+	<view class="ctrl-item share">
+		<button 
+		 open-type="share" 
+		 data-blogid="{{blogId}}"
+		 data-blog="{{blog}}" 
+		 class="share-btn" 
+		 hover-class="share-hover">
+			<i class="iconfont icon-fenxiang icon"></i>
+			<text>分享</text>
+		</button>
+	</view>
+</view>
+
+<x-login modalShow="{{loginShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail" />
+
+<x-bottom-modal modalShow="{{modalShow}}">
+	<!-- <form 
+	
+	bind:submit="onSend">
+		
+	</form> -->
+	<view slot="modal-content" >
+		<textarea
+		name="content" 
+		class="comment-content" 
+		placeholder="写评论" 
+		value="{{content}}" 
+		fixed="true" bindinput="onInput"></textarea>
+		<button class="send" bindtap="onSend">发送</button>
+	</view>
+</x-bottom-modal>
